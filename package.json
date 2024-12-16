@@ -1,13 +1,13 @@
 {
   "name": "ajifri-placeholder",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "devDependencies": {
     "@types/bun": "latest",
     "esbuild": "^0.24.0"
   },
   "files": ["dist"],
   "main": "dist/index.js",
-  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/minojiro/ajifri-placeholder.git"
   },
   "scripts": {
-    "build": "esbuild src/index.ts --bundle --minify --format=esm --outfile=dist/index.js"
-  },
-  "type": "module"
+    "build": "tsc",
+    "prepare": "bun run build"
+  }
 }
